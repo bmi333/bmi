@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Solicitud recibida</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background-color: #fbe5f2;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 16px;
+        }
+
+        #fondo {
+            position: fixed;
+            inset: 0;
+            background-color: #fbe5f2;
+            z-index: 0;
+        }
+
+        .contenedor {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .frm-modal {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 28px 22px 24px;
+            box-shadow: 0 12px 35px rgba(218, 0, 129, 0.12);
+            text-align: center;
+        }
+
+        .logo-top {
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto 18px;
+            display: block;
+        }
+
+        .icono-check {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #DA0081, #b10068);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 900;
+            margin: 8px auto 20px;
+            box-shadow: 0 10px 25px rgba(218, 0, 129, 0.22);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 26px;
+            line-height: 1.2;
+            color: #2f2f2f;
+            font-weight: 900;
+        }
+
+        p {
+            margin: 0 0 14px;
+            font-size: 16px;
+            line-height: 1.55;
+            color: #5b5b5b;
+        }
+
+        .destacado {
+            color: #DA0081;
+            font-weight: 800;
+        }
+
+        .estado-box {
+            margin: 22px 0 20px;
+            background: #fff4fb;
+            border: 1px solid #f3c7e0;
+            border-radius: 16px;
+            padding: 16px 14px;
+        }
+
+        .estado-box .titulo {
+            font-size: 15px;
+            font-weight: 800;
+            color: #DA0081;
+            margin-bottom: 6px;
+        }
+
+        .estado-box .texto {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            width: 100%;
+            border: none;
+            border-radius: 14px;
+            padding: 15px 18px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.24);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-1px);
+            opacity: 0.96;
+        }
+
+        .nota {
+            margin-top: 14px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .barra-carga {
+            width: 100%;
+            height: 9px;
+            background: #f1d3e4;
+            border-radius: 999px;
+            overflow: hidden;
+            margin: 22px 0 10px;
+        }
+
+        .barra-carga span {
+            display: block;
+            height: 100%;
+            width: 88%;
+            background: linear-gradient(90deg, #DA0081, #ff5eb7);
+            border-radius: 999px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.85; }
+            50% { opacity: 1; }
+            100% { opacity: 0.85; }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .frm-modal {
+                padding: 24px 18px 22px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fondo"></div>
+
+    <div class="contenedor">
+        <div class="frm-modal">
+            <img src="img3.png" alt="Logo" class="logo-top">
+
+            <div class="icono-check">✓</div>
+
+            <h1>Tu solicitud está a un paso de ser aprobada</h1>
+
+            <p>Hemos recibido tu información correctamente.</p>
+
+            <p>Por favor, <span class="destacado">continúa tu solicitud por WhatsApp</span> para finalizar el proceso.</p>
+
+            <div class="barra-carga">
+                <span></span>
+            </div>
+
+            <div class="estado-box">
+                <div class="titulo">Estado de la solicitud</div>
+                <p class="texto">Validación inicial completada. Falta el paso final de confirmación por WhatsApp.</p>
+            </div>
+
+            <a class="btn-whatsapp" href="https://wa.me/573017699760?text=Hola,%20quiero%20continuar%20mi%20solicitud." target="_blank" rel="noopener noreferrer">
+                Continuar por WhatsApp
+            </a>
+
+            <div class="nota">Serás dirigido al canal de atención para completar el proceso.</div>
+        </div>
+    </div>
+</body>
+</html>
